@@ -1,0 +1,14 @@
+FROM dre:nvidia-ros-kinetic-xenial-base
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        pkg-config \
+        libxau-dev \
+        libxdmcp-dev \
+        libxcb1-dev \
+        libxext-dev \
+        libx11-dev \
+	ros-kinetic-gazebo-* \
+	ros-kinetic-visualization-msgs \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD [ "gazebo" ]
